@@ -1,0 +1,46 @@
+{%  extends 'core/base.html' %}
+{%  load static %}
+{%  block title %} Detail Page {%  endblock  %}
+{%  block content   %}
+
+<h1>Detail page for items</h1>
+
+<div class = "paper">
+    <div class = "pen">
+        <img src = "{{details.image.url}}" alt = "image of Detail item" class = "rubber">
+    </div>
+    <div class = "pencil">
+        <p class = "geometry"><strong>Name:</strong>  {{ details.name }}</p>
+        <p class = "geometry"><strong>Category</strong> {{ details.category }}</p>
+        <p class = "geometry"><strong>Price:</strong> ${{ details.price }}</p>
+        <p class = "geometry"><strong>Is Sold:</strong> {{details.is_sold}}</p>
+        <p class = "geometry"><strong>Description:</strong> {{ details.description }}</p>
+        <div class = "scale">
+            {%  if details.created_by == request.user  %}
+                <a href = "{%  url 'edit_add_item' details.id %}" class = "compass">Edit Add Item </a>
+                <a href = "{%  url 'delete_item' details.id %}" class = "compass">Delete Item</a>
+            {%  else %}
+                <a href = "{% url 'new_conversation' details.id  %}" class = "compass">Contact Seller</a>
+            {%  endif %}
+        </div>
+    </div>
+</div>
+
+
+<h1>Related Items</h1>
+<div class = "ink">
+    {% for related_item in related_items  %}
+        <div class = "rombus">
+            <a href = "{% url 'detail_item' related_item.id  %}" class = "volume">
+                <img src = "{{related_item.image.url}}" alt = "image of item" class = "trapizium">
+                <p class = "shape">{{related_item.name}}</p>
+                <p class = "shape">$ {{related_item.price}}</p>
+                <p class = "shape">{{related_item.description | truncatechars:30 }}</p>
+            </a>
+        </div>
+    {% endfor  %}
+</div>
+
+
+
+{%  endblock  %}

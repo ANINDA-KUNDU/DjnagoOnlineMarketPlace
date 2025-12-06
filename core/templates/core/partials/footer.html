@@ -1,0 +1,23 @@
+{% load static %}
+
+<footer>
+    <div class = "ration">
+        <div class = "food">
+            <h1>aninda Online Market Place.</h1>
+            <p>This is Aninda's Online Market Place. This is a part of self project of mine. This project is a good example of 
+                Full - Stack Web Development ( Python, Django ).
+            </p>
+        </div>
+        <div class = "famaine">
+            <a href = "{% url 'home' %}" class = "hunger">Home</a>
+            {% if user.is_authenticated  %}
+                <a href = "{% url 'dashboard'%}" class = "hunger">Dashboard</a>
+                <a href = "{% url 'logout' %}" class = "hunger">Logout</a>
+            {%  else %}
+                <a href = "{% url 'login'  %}" class = "hunger">Login</a>
+                <a href = "{% url 'signup' %}" class = "hunger">Signup</a>
+            {%  endif %}
+        </div>
+    </div>
+    <p class = "starve">&copy; All Rights are Reserved by ANINDA KUNDU {% now 'Y' %}</p>
+</footer>

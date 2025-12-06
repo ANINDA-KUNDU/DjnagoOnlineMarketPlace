@@ -1,0 +1,41 @@
+{% extends 'core/base.html'  %}
+{% load static  %}
+{% block title  %}Login Page{%  endblock %}
+{% block content   %}
+
+
+<div>
+    {% if messages  %}
+        {% for message in messages  %}
+            {% if message.tags == 'error'  %}
+                <p  class = "failure">{{message}}</p>
+            {%  else %}
+                <p class = "pass">{{message}}</p>
+            {% endif  %}
+        {%  endfor  %}
+    {% endif  %}
+</div>
+
+
+<div class = "save">
+    <form method = "POST" class = "cherry">
+        {% csrf_token  %}
+        <h1 class = "peach">Login Page</h1>
+        <div>
+            <label class = "grapes">Username</label>
+            <input type = "text" name = "username" class = "berry">
+        </div>
+        <div>
+            <label class = "grapes">Password</label>
+            <input type = "password" name = "password" class = "berry">
+        </div>
+        <button type = "submit" class = "blackberry">Login</button>
+        <div class = "pineapple">
+            <p>If you don't have any account.<a href = "{% url 'signup'  %}">Signup</a></p>
+            <p>If you have forgotton your password.<a href = "{% url 'forget_password'  %}">Forget Password</a></p>
+        </div>
+    </form>
+</div>
+
+
+{%  endblock   %}

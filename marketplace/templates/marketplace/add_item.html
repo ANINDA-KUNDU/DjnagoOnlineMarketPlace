@@ -1,0 +1,29 @@
+{% extends 'core/base.html' %}
+{% load static  %}
+{% block title  %} Add Item Page {% endblock %}
+{% block content %}
+
+
+{%  if messages %}
+    {%  for message in messages %}
+        {%  if message.tags == 'error' %}
+            <p class = "failure">{{message}}</p>
+        {% else %}
+            <p class = "pass">{{message}}</p>
+        {%  endif %}
+    {%  endfor %}
+{%  endif %}
+
+
+<h1> Add Item </h1>
+
+<div class = "square">
+    <form method = 'POST'  enctype = "multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type = "submit">Add New Item</button>
+    </form>
+</div>
+
+
+{% endblock  %}

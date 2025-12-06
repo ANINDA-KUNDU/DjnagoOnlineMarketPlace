@@ -1,0 +1,30 @@
+{%  extends 'core/base.html'  %}
+{%  load static  %}
+{%  block title %} Conversation Detail {%  endblock %}
+{%  block content %}
+
+<h1>Conversation</h1>
+
+<div class = "interview">
+    {% if conversation.messages.all %}
+        {% for message in conversation.messages.all %}
+        <div class = "{% if message.created_by == request.user %}blue{% endif %}">
+            <p><strong>{{ message.created_by.username }}</strong> | {{ message.created_at }}</p>
+            <p>{{ message.content }}</p>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>No messages yet.</p>
+    {% endif %}
+</div>
+
+<div>
+    <form method = "POST" class = "intellegence">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type = "submit" class = "quotence">Send</button>
+    </form>
+</div>
+
+
+{% endblock  %}

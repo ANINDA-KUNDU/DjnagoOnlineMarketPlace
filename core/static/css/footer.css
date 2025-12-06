@@ -1,0 +1,28 @@
+.ration{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: whitesmoke;
+}
+.food{
+    width: 400px;
+    margin-left: 30px;
+}
+.famaine{
+    text-align: center;
+    align-content: center;
+    width: 950px;
+}
+.hunger{
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+    display: block;
+    margin-top: 15px;
+}
+.hunger:hover{
+    font-weight: bold;
+    text-decoration: underline;
+}
+.starve{
+    text-align: center;
+}

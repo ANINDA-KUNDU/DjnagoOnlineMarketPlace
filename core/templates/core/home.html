@@ -1,0 +1,55 @@
+{% extends 'core/base.html'  %}
+{% load static   %}
+{% block title  %}Home{% endblock  %}
+{%  block content  %}
+
+
+<div>
+    {% if messages  %}
+        {%  for message in messages  %}
+            {%  if message.tags == 'error'  %}
+                <p class = "failure">{{message}}</p>
+            {%  else %}
+                <p class = "pass">{{message}}</p>
+            {%  endif  %}
+        {%  endfor  %}
+    {% endif    %}
+</div>
+
+<div>
+    {%  if user.is_authenticated %}
+        <p class = "heading">Hi, {{request.user.username}}</p>
+    {% else  %}
+        <p>You are not Logged in, Please Login</p>
+    {%  endif  %}
+</div>
+
+
+<h1 class = "tower">All the Items</h1>
+<div class = "mobile">
+    {% for item in items  %}
+        <div class = "mobile-cover">
+            <a href = "{% url 'detail_item' item.id  %}" class = "message">
+            <h3>{{item.name}}</h3>
+            <img src = "{{item.image.url}}" alt = "Image of the item" class = "network"> 
+            <h2 class = "call">${{item.price}}</h2>
+            <p>{{item.description | truncatechars:50}}</p>
+            </a>
+        </div>
+    {%  endfor  %}
+</div>
+
+
+<h1 class = "outdoor">Category</h1>
+<div class = "recharge">
+    {%  for category in categories %}
+        <div class = "prepaid">
+            <h3>{{category.name}}</h3>
+            <p class = "talktime">{{category.items.count}}</p>
+        </div>
+    {%  endfor  %}
+</div>
+
+
+
+{%  endblock  %}

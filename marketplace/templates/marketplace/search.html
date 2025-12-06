@@ -1,0 +1,46 @@
+{%  extends 'core/base.html' %}
+{%  load static %}
+{%  block title %} Search Page {%  endblock %}
+{%  block content %}
+
+<h1>Search Page</h1>
+
+<div class = "measurement">
+    <div class = "chart">
+        <h2>Search</h2>
+        <div>
+            <form method = "GET" action = "{% url 'search'  %}">
+                {% csrf_token %}
+                <input type = "search" name = "query"  value = "{{query}}"  placeholder = "Search any toy, shoe or furniture..." class = "diameter">
+            </form>
+        </div>
+        <div>
+            <h2>Category</h2>
+            {% for category in categories %}
+                <a href = "{% url 'search' %}?query={{query}}&category={{category.id}}" class = "perimeter">
+                    <p>{{category}}</p>
+                </a>
+            {%  endfor %}
+        </div>
+        <h2>Claer Filter</h2>
+        <a href = "{% url 'search' %}" class = "perimeter">Clear Filter</a>
+    </div>
+    <div class = "radius">
+        {%  if items %}
+            {%  for item in items %}
+                <a href = "{% url 'detail_item' item.id  %}" class = "diagram">
+                    <div class = "dimension">
+                        <h3>{{item.name}}</h3>
+                        <img src = "{{item.image.url}}" alt = "Search Image" class = "centimeter" >
+                        <p> $ {{item.price}}</p>
+                        <p>{{ item.description | truncatechars:40 }}</p>
+                    </div>
+                </a>
+            {%  endfor %}
+        {%  else %}
+            <h2>There is no such product...</h2>
+        {%  endif %}
+    </div>
+</div>
+
+{%  endblock %}

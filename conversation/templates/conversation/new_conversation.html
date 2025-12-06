@@ -1,0 +1,27 @@
+{%  extends 'core/base.html' %}
+{%  load static %}
+{%  block title %} New Conversation {% endblock  %}
+{%  block content %}
+
+<h1>New Conversation</h1>
+
+<div>
+    <form method = "POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        {% if form.errors or form.non_fields_errors %}
+            <div>
+                {% for field in field  %}
+                    {{ field.errors }}
+                {% endfor  %}
+                {{ form.non_fields_errors}}
+            </div>
+        {%  endif %}
+        <button type = "submit">Send</button>
+    </form>
+</div>
+
+
+
+{% endblock  %}

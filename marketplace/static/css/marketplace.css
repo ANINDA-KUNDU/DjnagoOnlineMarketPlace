@@ -1,0 +1,123 @@
+.paper{
+    display: flex;
+    flex-wrap: wrap;
+}
+.pen{
+    width: 50%;
+}
+.rubber{
+    width: 700px;
+    height: 600px;
+    border-radius: 20px;
+    margin-left: 20px;
+    object-fit: cover;
+}
+.pencil{
+    width: 50%;
+}
+.geometry{
+    margin-left: 20px;
+}
+.square{
+    height: 100vh;
+}
+.scale{
+    height: 100px;
+}
+.ink{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.rombus{
+    width: 250px;
+    height: 300px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 10px;
+}
+.trapizium{
+    width: 240px;
+    height: 200px;
+    object-fit: cover;
+    margin: 5px;
+    border-radius: 10px;
+}
+.shape{
+    font-size: 15px;
+    margin: 0px;
+    padding: 0px;
+    margin-left: 10px;
+}
+.volume{
+    text-decoration: none;
+    color: black;
+}
+.compass{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    padding: 5px 12px 5px 12px;
+    margin: 25px;
+}
+.compass:hover{
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: white;
+    background-color: black;
+}
+.measurement{
+    display: flex;
+    flex-wrap: wrap;
+}
+.chart{
+    width: 500px;
+    height: 700px;
+}
+.radius{
+    width: 950px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.diameter{
+    width: 450px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding-left: 15px;
+    font-size: 17px;
+}
+.dimension{
+    width: 400px;
+    height: 600px;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin: 15px;
+}
+.centimeter{
+    width: 350px;
+    height: 380px;
+    border-radius: 20px;
+    margin: 15px;
+}
+.dimension h3{
+    margin-left: 20px;
+}
+.dimension p{
+    margin-left: 20px;
+    padding: 0px;
+}
+.diagram{
+    text-decoration: none;
+    color: black;
+}
+.perimeter{
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+}
+.perimeter:hover{
+    font-weight: bold;
+}

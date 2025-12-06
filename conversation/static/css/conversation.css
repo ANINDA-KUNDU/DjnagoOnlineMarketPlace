@@ -1,0 +1,52 @@
+.job{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.head{
+    display: flex;
+    height: 200px;
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: #c9c9fe;
+    width: 800px;
+}
+.recruiter{
+    height: 180px;
+    width: 150px;
+    border-radius: 15px;
+    margin: 15px;
+}
+.screening{
+    text-decoration: none;
+    color: black;
+    margin-left: 100px;
+}
+.intellegence{
+    display: flex;
+}
+.quotence{
+    background-color: green;
+    border: 1px solid black;
+    width: 150px;
+    height: 50px;
+    margin-top: 20px;
+    margin-left: 15px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.quotence:hover{
+    background-color: #45a049;
+}
+.mango{
+    height: 50px;
+    width: 500px;
+    border-radius: 15px;
+    padding-left: 15px;
+}

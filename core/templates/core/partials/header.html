@@ -1,0 +1,21 @@
+{% load static  %}
+<header>
+    <nav>
+        <div>
+            <a href = "{% url 'home'  %}" class = "fruit">Online Market Place.</a>
+        </div>
+        <div class = "savior">
+            {%  if user.is_authenticated %}
+            <a href = "{% url 'logout'  %}" class = "link">Logout</a>
+            <a href = "{%  url 'dashboard' %}" class = "link">Dashboard</a>
+            <a href = "{% url 'add_item'  %}" class = "link">Add Item</a>
+            <a href = "{% url 'search' %}" class = "link">Search</a>
+            <a href = "{% url 'inbox' %}" class = "link">Inbox</a>
+            {% else  %}
+            <a href = "{% url 'signup' %}" class = "link">Signup</a>
+            <a href = "{% url 'login'  %}" class = "link">Login</a>
+            {% endif %}
+        </div>
+        
+    </nav>
+</header>

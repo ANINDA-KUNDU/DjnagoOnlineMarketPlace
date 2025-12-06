@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+{% load static  %}
+{% block title  %} Edit Add Item {% endblock %}
+{% block content  %}
+
+<h1>Edit Add Item</h1>
+
+<div>
+    <form method = 'POST' enctype = "multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type = "submit">Edit Add Item</button>
+    </form>
+</div>
+
+
+{%  endblock %}

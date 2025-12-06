@@ -1,0 +1,36 @@
+{%  extends 'core/base.html' %}
+{%  load static %}
+{%  block title %} Inbox Page {% endblock  %}
+{%  block content %}
+
+<h1>Inbox page</h1>
+
+<div class = "job">
+        {% if conversations %}
+            {% for conversation in conversations %}
+            <a href = "{% url 'conversation_detail' conversation.pk   %}" class = "screening">
+                <div class = "head">
+                    <div>
+                        {% if conversation.item.image %}
+                            <img src="{{ conversation.item.image.url }}" alt="Item" class = "recruiter">
+                        {% endif %}
+                    </div>
+                    <div>
+                        {% for member in conversation.members.all %}
+                            {% if member != request.user %}
+                                <p><strong>{{ member.username }}</strong> | {{ conversation.modified_at }}</p>
+                                <p>{{ conversation.item.name }}</p>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                </a>
+            {% endfor %}
+        {% else %}
+            <p>You have no conversations yet.</p>
+        {% endif %}
+</div>
+
+
+
+{%  endblock   %}

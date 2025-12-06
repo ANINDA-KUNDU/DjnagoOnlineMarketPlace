@@ -1,0 +1,37 @@
+header{
+    margin: 0px;
+    padding: 0px;
+}
+nav{
+    display: flex;
+}
+.fruit{
+    text-decoration: none;
+    font-size: 30px;
+    color: navy;
+    margin-left: 50px;
+}
+.fruit:hover{
+    font-weight: bold;
+}
+.savior{
+    margin-left: 600px;
+}
+.link{
+    text-decoration: none;
+    font-size: 20px;
+    float: right;
+    margin: 15px;
+    padding: 5px;
+    scroll-behavior: smooth;
+}
+.link:hover{
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 5px 15px 5px 15px;
+    margin: 15px;
+    scroll-behavior: smooth;
+    font-weight: bold;
+    background-color: whitesmoke;
+    transform: 0.25s ease;
+}
